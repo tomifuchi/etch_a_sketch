@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch a sketch</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <h3>Etch a sketch</h3>
+    <div class="container">
+        <div id="control-panel">
+            <h4>Control panel</h4>
+            <label for="current-color">Current color :</label>
+            <div id="current-drawing-color"></div>
+            <div class="button-container">
+            <button id="clear">Clear</button>
+            <button id="random-color">Random color mode</button>
+            <button id="default-color">Default color</button>
+            <button id="eraser">Eraser</button>
+            Drawing color<input type="color" id="color-picker">
+            Border color <input type="color" id="border-color-picker">
+           </div>
+           <h4>Grid size</h4>
+            <label for="points">Pixels x Pixels (between 2 and 100):</label>
+            <label for="points" id="current-pixel"></label>
+            <input type="range" id="slide-pixels" name="pixels" min="2" max="100"> 
+            <input type="number" id="manual-pixels" name="pixels" min="2" max="100"> 
+        </div>
+        <div id="drawing-space-container">
+        <div id="drawing_space"></div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
