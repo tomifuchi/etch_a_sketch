@@ -57,17 +57,18 @@ function makeDrawingSpace(node, npx){
         child_node.addEventListener("touchstart", (event) => {
           isDrawing = true;
         });
-        child_node.addEventListener("touchend", (event) => {
-          isDrawing = false;
-        });
         child_node.addEventListener("touchmove", (event) => {
+          event.preventDefault();
           if(isDrawing){
             child_node.style.border = drawing_border_color;
             child_node.style.backgroundColor = drawing_color;
-          } 
+          }
         });
- 
-      });
+        child_node.addEventListener("touchend", (event) => {
+          event.preventDefault();
+          isDrawing = false;
+        });
+     });
     } else {
         return 'Number of pixel should be atleast 2 and not negative';
     }
