@@ -54,6 +54,20 @@ function makeDrawingSpace(node, npx){
           } 
         });
      });
+
+	/* 
+	  On IMPLEMENTING FOR TOUCH SCREEN/MOBILE
+	  Since due to time constraint this feature will be implement in the future,
+	  but to make sure you know where you left off. Here's where to look
+	  https://developer.mozilla.org/en-US/docs/Web/API/Touch_events
+	  Try and follow the example, it draws on an html canvas
+	  but you will figure out how to make it work with this
+	  example, I'm sure.
+	
+	  After this is done, try and clean up the code in anyway you can. Shorten 
+	  it, names, add/remove functions, .... Any way you can think of
+	  to make this looks clean and readable, easy to maintain.
+	*/
     } else {
         return 'Number of pixel should be atleast 2 and not negative';
     }
