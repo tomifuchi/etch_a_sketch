@@ -53,21 +53,6 @@ function makeDrawingSpace(node, npx){
             child_node.style.backgroundColor = drawing_color;
           } 
         });
-        //Supporting mobile device
-        child_node.addEventListener("touchstart", (event) => {
-          isDrawing = true;
-        });
-        child_node.addEventListener("touchmove", (event) => {
-          event.preventDefault();
-          if(isDrawing){
-            child_node.style.border = drawing_border_color;
-            child_node.style.backgroundColor = drawing_color;
-          }
-        });
-        child_node.addEventListener("touchend", (event) => {
-          event.preventDefault();
-          isDrawing = false;
-        });
      });
     } else {
         return 'Number of pixel should be atleast 2 and not negative';
@@ -141,17 +126,15 @@ manual_grid_size.addEventListener('change', (event) => {
 //Color picker
 const color_picker = document.getElementById('color-picker');
 const border_color_picker = document.getElementById('border-color-picker');
-drawing_color = color_picker.value;
-drawing_border_color = '1px solid ' + border_color_picker.value;
-
-color_picker.addEventListener('input', () => {
+color_picker.addEventListener('change', () => {
   drawing_color = color_picker.value;
   drawing_border_color = '1px solid ' + border_color_picker.value;
   updateColor();
 })
 
-border_color_picker.addEventListener('input', () => {
+border_color_picker.addEventListener('change', () => {
   drawing_color = color_picker.value;
   drawing_border_color = '1px solid ' + border_color_picker.value;
   updateColor();
 });
+updateColor();
